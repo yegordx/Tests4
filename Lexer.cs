@@ -34,7 +34,8 @@ public class Lexer
     {
         var tokens = new List<Token>();
         var pattern = @"(//.*?$|/\*.*?\*/|""(\\.|[^\\\""])*""|'[^']*'|#[^\n]*|\b\w+\b|\S)";
-        var matches = Regex.Matches(code, pattern, RegexOptions.Singleline | RegexOptions.Multiline);
+        var regex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Multiline, TimeSpan.FromSeconds(1));
+        var matches = regex.Matches(code);
 
         foreach (Match match in matches)
         {
