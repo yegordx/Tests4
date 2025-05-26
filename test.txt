@@ -1,0 +1,16 @@
+using System;
+
+namespace Example
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Це коментар
+            int number = 42;
+            string message = "Привіт, світ!";
+            char letter = 'A';
+            Console.WriteLine(message);
+        }
+    }
+}
