@@ -18,7 +18,9 @@ public class LexerService
     public List<Token> AnalyzeFromSource()
     {
         var code = _codeProvider.GetCode();
-        return Lexer.Analyze(code);
+        var lexer = new Lexer();
+        var tokens = lexer.Analyze(code);
+        return tokens;
     }
 }
 
