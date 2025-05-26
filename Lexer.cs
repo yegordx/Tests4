@@ -43,23 +43,41 @@ public class Lexer
             TokenType type = TokenType.Unknown;
 
             if (word.StartsWith("//") || word.StartsWith("/*"))
+            {
                 type = TokenType.Comment;
-            else if (word.StartsWith("#"))
+            }
+            else if (word.StartsWith('#'))
+            {
                 type = TokenType.PreprocessorDirective;
-            else if (word.StartsWith("\"") && word.EndsWith("\""))
+            }
+            else if (word.StartsWith('\"') && word.EndsWith('\"'))
+            {
                 type = TokenType.StringLiteral;
-            else if (word.StartsWith("'") && word.EndsWith("'") && word.Length == 3)
+            }
+            else if (word.StartsWith('\'') && word.EndsWith('\'') && word.Length == 3)
+            {
                 type = TokenType.CharLiteral;
+            }
             else if (Reserved.Contains(word))
+            {
                 type = TokenType.Keyword;
+            }
             else if (Operators.Contains(word))
+            {
                 type = TokenType.Operator;
+            }
             else if (Punctuation.Contains(word))
+            {
                 type = TokenType.Punctuation;
+            }
             else if (double.TryParse(word, out _))
+            {
                 type = TokenType.Number;
+            }
             else if (IsValidIdentifier(word))
+            {
                 type = TokenType.Identifier;
+            }
 
             tokens.Add(new Token(word, type));
         }
