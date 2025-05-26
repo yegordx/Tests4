@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Lab1;
 
-public static class Lexer
+public class Lexer
 {
-    public static readonly List<string> Reserved = new() {
+    private readonly List<string> Reserved = new() {
         "abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char",
         "checked", "class", "const", "continue", "decimal", "default", "delegate",
         "do", "double", "else", "enum", "event", "explicit", "extern", "false",
@@ -21,16 +21,16 @@ public static class Lexer
         "this", "throw", "true", "try", "typeof", "uint", "ulong", "unchecked",
         "unsafe", "ushort", "using", "var", "virtual", "void", "volatile", "while", "get", "set", "Guid"
     };
-    public static readonly List<string> Operators = new() {
+    private readonly List<string> Operators = new() {
         "=", "+", "-", "*", "/", "%", "&&", "||", "!", "==", "!=", "<", ">", "<=", ">=",
         "+=", "-=", "*=", "/=", "%=", "&&=", "||=", "++", "--"
     };
-    public static readonly List<string> Punctuation = new() {
+    private readonly List<string> Punctuation = new() {
         "(", ")", "{", "}", "[", "]", ",", ";", ":", "=>", "."
     };
-    public static readonly HashSet<string> Identifiers = new();
+    private readonly HashSet<string> Identifiers = new();
 
-    public static List<Token> Analyze(string code)
+    public List<Token> Analyze(string code)
     {
         var tokens = new List<Token>();
         var pattern = @"(//.*?$|/\*.*?\*/|""(\\.|[^\\\""])*""|'[^']*'|#[^\n]*|\b\w+\b|\S)";
@@ -66,7 +66,7 @@ public static class Lexer
         return tokens;
     }
 
-    public static bool IsValidIdentifier(string identifier)
+    public bool IsValidIdentifier(string identifier)
     {
         if (Identifiers.Contains(identifier)) return true;
         if (identifier.StartsWith("@")) identifier = identifier[1..];
