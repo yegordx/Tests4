@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab1;
 
-public class Lexer
+public static class Lexer
 {
     public static readonly List<string> Reserved = new() {
         "abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char",

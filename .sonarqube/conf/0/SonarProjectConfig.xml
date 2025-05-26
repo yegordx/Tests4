@@ -4,6 +4,6 @@
   <ProjectPath>D:\MSVS\4\Lab1\Lab1.csproj</ProjectPath>
   <FilesToAnalyzePath>D:\MSVS\4\Lab1\.sonarqube\conf\0\FilesToAnalyze.txt</FilesToAnalyzePath>
   <OutPath>D:\MSVS\4\Lab1\.sonarqube\out\0</OutPath>
-  <ProjectType>Test</ProjectType>
+  <ProjectType>Product</ProjectType>
   <TargetFramework>net8.0</TargetFramework>
 </SonarProjectConfig>

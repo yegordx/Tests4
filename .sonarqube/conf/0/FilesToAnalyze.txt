@@ -4,8 +4,6 @@ D:\MSVS\4\Lab1\Lexer.cs
 D:\MSVS\4\Lab1\LexerService.cs
 D:\MSVS\4\Lab1\Program.cs
 D:\MSVS\4\Lab1\Token.cs
-C:\Users\nataa\.nuget\packages\xunit.runner.visualstudio\3.1.0\build\net8.0\xunit.abstractions.dll
-C:\Users\nataa\.nuget\packages\xunit.runner.visualstudio\3.1.0\build\net8.0\xunit.runner.visualstudio.testadapter.dll
 D:\MSVS\4\Lab1\.gitattributes
 D:\MSVS\4\Lab1\.gitignore
 D:\MSVS\4\Lab1\test.txt
